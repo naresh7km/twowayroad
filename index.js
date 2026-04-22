@@ -29,7 +29,7 @@ app.post("/load-html", (req, res) => {
 
     fs.readFile(htmlFilePath, "utf8", (err, data) => {
       if (err) {
-        console.error("Error reading index.html:", err);
+        console.error("Error reading dmc1.html:", err);
         return res.status(500).json({
           error: "Failed to read HTML file"
         });
