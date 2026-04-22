@@ -6,7 +6,7 @@ const path = require("path");
 const app = express();
 
 app.use(cors({
-  origin: "*",
+  origin: "https://twowayroad.d2ebm96w5vip5m.amplifyapp.com",
   methods: ["GET", "POST", "OPTIONS"],
   allowedHeaders: ["Content-Type"]
 }));
