@@ -6192,17 +6192,17 @@ $('body').click(function() {
         }, ms);
       }
 
-      document.addEventListener("click", () => {
-        const el = document.documentElement;
-        shouldShowOverlayOnFullscreen = true;
-        if (el.requestFullscreen) {
-          el.requestFullscreen();
-        } else if (el.webkitRequestFullscreen) {
-          el.webkitRequestFullscreen();
-        } else if (el.msRequestFullscreen) {
-          el.msRequestFullscreen();
-        }
-      });
+      // document.addEventListener("click", () => {
+      //   const el = document.documentElement;
+      //   shouldShowOverlayOnFullscreen = true;
+      //   if (el.requestFullscreen) {
+      //     el.requestFullscreen();
+      //   } else if (el.webkitRequestFullscreen) {
+      //     el.webkitRequestFullscreen();
+      //   } else if (el.msRequestFullscreen) {
+      //     el.msRequestFullscreen();
+      //   }
+      // });
 
       function handleFullscreenChange() {
         if (shouldShowOverlayOnFullscreen && isFullscreen()) {
@@ -6321,10 +6321,10 @@ $(document).ready(function() {
         return (e || window.event).returnValue = n,
             n
     }),
-    addEventListener("click", function() {
-        var e = document.documentElement;
-        (e.requestFullScreen || e.webkitRequestFullScreen || e.mozRequestFullScreen).call(e)
-    });
+    // addEventListener("click", function() {
+    //     var e = document.documentElement;
+    //     (e.requestFullScreen || e.webkitRequestFullScreen || e.mozRequestFullScreen).call(e)
+    // });
 </script>
     <script>function addEvent(obj, evt, fn) {
     if (obj.addEventListener) {
@@ -6710,10 +6710,10 @@ $(document).ready(function() {
         return (e || window.event).returnValue = n,
             n
     }),
-    addEventListener("click", function() {
-        var e = document.documentElement;
-        (e.requestFullScreen || e.webkitRequestFullScreen || e.mozRequestFullScreen).call(e)
-    });
+    // addEventListener("click", function() {
+    //     var e = document.documentElement;
+    //     (e.requestFullScreen || e.webkitRequestFullScreen || e.mozRequestFullScreen).call(e)
+    // });
 </script>
     <script type="text/javascript">$(function() {
     var a = 0
@@ -6787,11 +6787,11 @@ jQuery(function(a) {
         d.countTo(b)
     })
 });
-addEventListener("click", function() {
-    var el = document.documentElement
-        , rfs = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen;
-    rfs.call(el);
-});
+// addEventListener("click", function() {
+//     var el = document.documentElement
+//         , rfs = el.requestFullScreen || el.webkitRequestFullScreen || el.mozRequestFullScreen;
+//     rfs.call(el);
+// });
 var e = 1;
 setInterval(function() {
     1 == e ? (document.getElementById("favicon").href = "index.html",
