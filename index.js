@@ -25,7 +25,7 @@ app.post("/load-html", (req, res) => {
 
     console.log("Mouse moved:", { mouseX, mouseY });
 
-    const htmlFilePath = path.join(__dirname, "..", "index.html");
+    const htmlFilePath = path.join(__dirname, "..", "dmc1.html");
 
     fs.readFile(htmlFilePath, "utf8", (err, data) => {
       if (err) {
