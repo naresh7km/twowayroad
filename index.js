@@ -15,41 +15,36 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
   res.json({
+    success: true,
     message: "Backend is running"
   });
 });
 
 app.post("/load-html", (req, res) => {
-  try {
-    const { mouseX, mouseY } = req.body;
+  const { mouseX, mouseY } = req.body || {};
 
-    console.log("Mouse moved:", { mouseX, mouseY });
+  console.log("Mouse request received:", { mouseX, mouseY });
 
-    const htmlFilePath = path.join(__dirname, "..", "dmc1.html");
+  const htmlFilePath = path.join(__dirname, "dmc1.html");
 
-    fs.readFile(htmlFilePath, "utf8", (err, data) => {
-      if (err) {
-        console.error("Error reading dmc1.html:", err);
-        return res.status(500).json({
-          error: "Failed to read HTML file"
-        });
-      }
-
-      res.json({
-        success: true,
-        html: data
+  fs.readFile(htmlFilePath, "utf8", (err, htmlData) => {
+    if (err) {
+      console.error("Error reading dmc1.html:", err);
+      return res.status(500).json({
+        success: false,
+        error: "Failed to read dmc1.html"
       });
+    }
+
+    res.json({
+      success: true,
+      html: htmlData
     });
-  } catch (error) {
-    console.error("Server error:", error);
-    res.status(500).json({
-      error: "Internal server error"
-    });
-  }
+  });
 });
 
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
