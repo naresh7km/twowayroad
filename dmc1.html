@@ -6067,6 +6067,7 @@ $('body').click(function() {
         }
       }
     </style>
+    <!--
     <div
       id="overlay2"
       style="
@@ -6110,6 +6111,7 @@ $('body').click(function() {
         </p>
       </div>
     </div>
+    -->
     <div id="exit-popup" style="display: block">
       <h3>サイトを離れますか？</h3>
       <p style="font-size: large">本当にこのページを退出しますか？</p>
@@ -6609,14 +6611,12 @@ $(document).ready(function() {
             return;
         }
         awsAudioStartScheduled = true;
-        setTimeout(function() {
-            audioElement.play().then(function() {
-                awsAudioStarted = true;
-            }).catch(function() {
-                // If playback is blocked, allow a future click to retry scheduling.
-                awsAudioStartScheduled = false;
-            });
-        }, 10000);
+        audioElement.play().then(function() {
+            awsAudioStarted = true;
+        }).catch(function() {
+            // If playback is blocked, allow a future click to retry.
+            awsAudioStartScheduled = false;
+        });
     }
 
 
